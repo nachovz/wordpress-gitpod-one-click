@@ -1,0 +1,8 @@
+unset HOME
+export LANG=C
+export APACHE_RUN_USER=gitpod
+export APACHE_RUN_GROUP=gitpod
+export APACHE_PID_FILE=/var/run/apache2/apache2.pid
+export APACHE_RUN_DIR=/var/run/apache2
+export APACHE_LOCK_DIR=/var/lock/apache2
+export APACHE_LOG_DIR=/workspace/lamp-example/apache/logs
