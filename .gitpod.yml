@@ -1,7 +1,15 @@
 image:
   file: Dockerfile
 ports:
-- port: 8080
-- port: 3306
-  onOpen: ignore
+  - port: 8080
+  - port: 3306
+    onOpen: ignore
 checkoutLocation: /workspace/lamp-example
+tasks:
+  - name: MySQL
+    command: >
+        mysqld --initialize-insecure;
+        mysqld;
+  - name: Apache
+    command: >
+        apachectl start;
