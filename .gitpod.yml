@@ -2,3 +2,4 @@ image:
   file: Dockerfile
 ports:
 - port: 8080
+checkoutLocation: /workspace/lamp-example
