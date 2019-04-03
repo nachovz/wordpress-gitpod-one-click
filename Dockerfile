@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y install apache2 mysql-server
 
 RUN echo "include /workspace/lamp-example/apache/apache.conf" > /etc/apache2/apache2.conf
 #RUN echo "ps h -p $$ -o args='' | cut -f1 -d' '" > /etc/apache2/envvars
-RUN echo "source /workspace/lamp-example/apache/envvars" >> /etc/apache2/envvars
+RUN echo "/workspace/lamp-example/apache/envvars" > /etc/apache2/envvars
 
 
 
