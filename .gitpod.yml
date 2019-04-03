@@ -2,4 +2,6 @@ image:
   file: Dockerfile
 ports:
 - port: 8080
+- port: 3306
+  onOpen: ignore
 checkoutLocation: /workspace/lamp-example
