@@ -4,10 +4,6 @@ USER root
 
 RUN apt-get update && apt-get -y install apache2 mysql-server debconf-utils 
 
-RUN echo "phpmyadmin phpmyadmin/internal/skip-preseed boolean true" | debconf-set-selections
-RUN echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect" | debconf-set-selections
-RUN echo "phpmyadmin phpmyadmin/dbconfig-install boolean false" | debconf-set-selections
-
 RUN echo "include /workspace/lamp-example/apache/apache.conf" > /etc/apache2/apache2.conf
 RUN echo ". /workspace/lamp-example/apache/envvars" > /etc/apache2/envvars
 
@@ -17,6 +13,12 @@ RUN mkdir /var/run/mysqld
 RUN chown gitpod:gitpod /var/run/apache2 /var/lock/apache2 /var/run/mysqld
 
 RUN addgroup gitpod www-data
+
+RUN echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
+RUN echo "phpmyadmin phpmyadmin/app-password-confirm password gitpod" | debconf-set-selections
+RUN echo "phpmyadmin phpmyadmin/mysql/admin-pass password gitpod" | debconf-set-selections
+RUN echo "phpmyadmin phpmyadmin/mysql/app-pass password gitpod" | debconf-set-selections
+RUN echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
 
 RUN apt-get -y  install phpmyadmin
 
