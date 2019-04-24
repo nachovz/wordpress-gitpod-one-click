@@ -14,3 +14,7 @@ tasks:
   - name: Apache
     command: >
         apachectl start;
+  - name: WordPress
+    command: >
+        wp core download
+        
