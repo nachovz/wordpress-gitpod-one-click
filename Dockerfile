@@ -2,10 +2,15 @@ FROM gitpod/workspace-full
 
 USER root
 
-RUN apt-get update && apt-get -y install apache2 mysql-server debconf-utils 
+RUN apt-get update && apt-get -y install apache2 debconf-utils 
+
+RUN echo 'mysql-server mysql-server/root_password password gitpod' | debconf-set-selections
+RUN echo 'mysql-server mysql-server/root_password_again password gitpod' | debconf-set-selections
 
 RUN echo "include /workspace/lamp-example/apache/apache.conf" > /etc/apache2/apache2.conf
 RUN echo ". /workspace/lamp-example/apache/envvars" > /etc/apache2/envvars
+
+RUN apt-get -y install mysql-server
 
 RUN echo "!include /workspace/lamp-example/mysql/mysql.cnf" > /etc/mysql/my.cnf
 
@@ -20,7 +25,7 @@ RUN echo "phpmyadmin phpmyadmin/mysql/admin-pass password gitpod" | debconf-set-
 RUN echo "phpmyadmin phpmyadmin/mysql/app-pass password gitpod" | debconf-set-selections
 RUN echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
 
-RUN apt-get -y  install phpmyadmin
+RUN apt-get -y install phpmyadmin
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
