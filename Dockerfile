@@ -2,7 +2,7 @@ FROM gitpod/workspace-full
 
 USER root
 
-RUN apt-get update && apt-get -y install apache2 mysql-server
+RUN apt-get update && apt-get -y install apache2 mysql-server phpmyadmin
 
 RUN echo "include /workspace/lamp-example/apache/apache.conf" > /etc/apache2/apache2.conf
 RUN echo ". /workspace/lamp-example/apache/envvars" > /etc/apache2/envvars
