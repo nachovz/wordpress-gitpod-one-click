@@ -33,3 +33,7 @@ log_error               = /workspace/lamp-example/mysql/logs/error.log
 
 expire_logs_days	= 10
 max_binlog_size     = 100M
+
+[client]
+user=gitpod
+password=gitpod
