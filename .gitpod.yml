@@ -17,3 +17,5 @@ tasks:
   - name: WordPress
     command: >
         wp core download;
+        touch .htaccess;
+        chmod 660 .htaccess;
