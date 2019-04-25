@@ -15,7 +15,6 @@ tasks:
     command: >
         apachectl start;
   - name: Wordpress
-    before: MySQL
     command: >
         wp core download --path=$GITPOD_REPO_ROOT
         chmod 660 $GITPOD_REPO_ROOT/.htaccess;
