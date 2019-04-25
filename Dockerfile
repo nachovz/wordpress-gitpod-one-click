@@ -18,9 +18,3 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 
 RUN chmod +x wp-cli.phar
 RUN sudo mv wp-cli.phar /usr/local/bin/wp
-
-
-#RUN mkdir /workspace
-#RUN chown -R gitpod:gitpod /workspace
-#USER gitpod
-#RUN cd /workspace && git clone https://github.com/meysholdt/laravel-apache-mysql-php-in-gitpod-example.git lamp-example
