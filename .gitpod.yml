@@ -14,6 +14,7 @@ tasks:
     command: >
         apachectl start;
   - name: Wordpress
+    before: mysqld --initialize-insecure
     command: >
         wp core download --path=$GITPOD_REPO_ROOT;
         cd $GITPOD_REPO_ROOT;
