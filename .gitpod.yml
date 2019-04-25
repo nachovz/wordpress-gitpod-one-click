@@ -2,7 +2,6 @@ image:
   file: Dockerfile
 ports:
   - port: 8080
-  - port: 3306
     onOpen: ignore
 checkoutLocation: "lamp-example"
 workspaceLocation: "."
@@ -16,9 +15,9 @@ tasks:
         apachectl start;
   - name: Wordpress
     command: >
-        wp core download --path=$GITPOD_REPO_ROOT
-        chmod 660 $GITPOD_REPO_ROOT/.htaccess;
+        wp core download --path=$GITPOD_REPO_ROOT;
         cd $GITPOD_REPO_ROOT;
+        chmod 660 .htaccess;
         wp config create --dbname=wpclidemo --dbuser=root --dbpass=;
         wp db create;
         wp core install --url=$(gp url 8080) --title="WP-Gitpod" --admin_user=gitpod --admin_password=gitpod --admin_email=nacho@4geeks.co;
