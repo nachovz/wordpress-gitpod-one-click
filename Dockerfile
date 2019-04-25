@@ -2,7 +2,7 @@ FROM gitpod/workspace-full
 
 USER root
 
-RUN apt-get update && apt-get -y install apache2 mysql-server php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc 
+RUN apt-get update && apt-get -y install apache2 mysql-server php-curl php-gd php-mbstring php-xml php-xmlrpc 
 
 RUN echo "include /workspace/lamp-example/apache/apache.conf" > /etc/apache2/apache2.conf
 RUN echo ". /workspace/lamp-example/apache/envvars" > /etc/apache2/envvars
