@@ -17,7 +17,7 @@ tasks:
   - name: Wordpress
     before: MySQL
     command: >
-        wp core download --path=$GITPOD_REPO_ROOT;
+        wp core download --path=$GITPOD_REPO_ROOT
         chmod 660 $GITPOD_REPO_ROOT/.htaccess;
         cd $GITPOD_REPO_ROOT;
         wp config create --dbname=wpclidemo --dbuser=root --dbpass=;
