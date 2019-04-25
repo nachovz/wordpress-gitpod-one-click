@@ -17,5 +17,7 @@ tasks:
   - name: WordPress
     command: >
         wp core download --path=$GITPOD_REPO_ROOT;
-        touch $GITPOD_REPO_ROOT/.htaccess;
         chmod 660 $GITPOD_REPO_ROOT/.htaccess;
+        wp config create --dbname=wpclidemo --dbuser=root --dbpass=;
+        wp db create;
+        wp core install --url=$(gp url 8080) --title="WP-Gitpod" --admin_user=gitpod --admin_password=gitpod --admin_email=nacho@4geeks.co;
