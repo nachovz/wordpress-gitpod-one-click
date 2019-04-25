@@ -9,7 +9,7 @@ workspaceLocation: "."
 tasks:
   - name: MySQL
     command: >
-        nohup mysqld --initialize-insecure &;
+        nohup mysqld --initialize-insecure;
         mysqld;
         wp core download --path=$GITPOD_REPO_ROOT;
         cd $GITPOD_REPO_ROOT;
