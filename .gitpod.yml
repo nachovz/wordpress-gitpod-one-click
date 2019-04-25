@@ -16,6 +16,6 @@ tasks:
         apachectl start;
   - name: WordPress
     command: >
-        wp core download;
-        touch .htaccess;
-        chmod 660 .htaccess;
+        wp core download --path=$GITPOD_REPO_ROOT;
+        touch $GITPOD_REPO_ROOT/.htaccess;
+        chmod 660 $GITPOD_REPO_ROOT/.htaccess;
