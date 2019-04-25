@@ -15,5 +15,7 @@ WP-CLI
 - Admin pass: gitpod
 
 wp config create --dbname=wpclidemo --dbuser=root --dbpass=;
+  
 wp db create;
+  
 wp core install --url=$(gp url 8080) --title="WP-Gitpod" --admin_user=gitpod --admin_password=gitpod --admin_email=nacho@4geeks.co;
