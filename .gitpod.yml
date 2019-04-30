@@ -12,14 +12,12 @@ tasks:
     command: >
         /usr/bin/mysqld_safe &
         sleep 5;
-        chmod 660 $GITPOD_REPO_ROOT/.htaccess;
         cd $GITPOD_REPO_ROOT;
         wp config create --dbname=wpclidemo --dbuser=root;
-        wp db create;
-        wp core install --url=$(gp url 8080) --title="WP-Gitpod" --admin_user=gitpod --admin_password=gitpod --admin_email=admin@email.com;
   - name: Apache
     command: >
         apachectl start;
   - name: WordPress
     command: >
+        chmod 660 $GITPOD_REPO_ROOT/.htaccess;
         cd $GITPOD_REPO_ROOT;
