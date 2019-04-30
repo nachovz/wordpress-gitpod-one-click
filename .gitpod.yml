@@ -15,6 +15,8 @@ tasks:
         sleep 5;
         cd $GITPOD_REPO_ROOT;
         wp config create --dbname=wpclidemo --dbuser=root;
+        wp db create;
+        wp core install --url=$(gp url 8080) --title="WP-Gitpod" --admin_user=gitpod --admin_password=gitpod --admin_email=admin@email.com;
   - name: Apache
     command: >
         apachectl start;
