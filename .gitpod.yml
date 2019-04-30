@@ -10,7 +10,8 @@ tasks:
   - name: MySQL
     init: wp core download --path=$GITPOD_REPO_ROOT;
     command: >
-        mysqld --initialize-insecure &
+        mysqld --initialize-insecure;
+        mysqld &
         sleep 5;
         cd $GITPOD_REPO_ROOT;
         wp config create --dbname=wpclidemo --dbuser=root;
