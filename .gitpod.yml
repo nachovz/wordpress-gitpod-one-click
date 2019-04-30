@@ -21,6 +21,5 @@ tasks:
     command: >
         apachectl start;
   - name: WordPress
-    init: 
     command: >
         cd $GITPOD_REPO_ROOT;
