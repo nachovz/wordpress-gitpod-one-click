@@ -14,16 +14,7 @@ WP-CLI
 - Admin User: gitpod
 - Admin pass: gitpod
 
-WiP... 
-You'll have to run these commands manually. Change accordingly:
-```bash
-  wp config create --dbname=wpclidemo --dbuser=root --dbpass=
-  wp db create
-  wp core install --url=$(gp url 8080) --title="WP-Gitpod" --admin_user=gitpod --admin_password=gitpod --admin_email=admin@email.com
-```
-
 ## Useful commands
 
 - Create dummy posts
 ```curl http://loripsum.net/api/3 | wp post generate --post_content --count=10```
-
