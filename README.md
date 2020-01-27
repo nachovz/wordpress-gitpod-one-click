@@ -1,6 +1,6 @@
 # Run Wordpress on gitpod
 
-You can use this repository to run a plain WordPress installation.
+You can use this repository to run a plain WordPress installation on [Gitpod](https://gitpod.io).
 
 Using:
   
